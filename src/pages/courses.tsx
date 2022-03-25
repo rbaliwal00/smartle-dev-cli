@@ -38,7 +38,7 @@ const Courses = () => {
     ( async () => {
 			try {
         const res = await fetch(
-          `http://13.126.1.233:8000/coursesonhome`
+          `https://www.backend.smartle.co/coursesonhome`
         );
 
         const json = await res.json();
@@ -48,7 +48,7 @@ const Courses = () => {
       }else if (filterAge !== 'All'){
         setCourses(json.result?.filter((dataItem: any, index: any) => dataItem.course_age === filterAge))
       }else{
-         setCourses(json.result);
+         setCourses(json);
        }
 			} catch (e: any) {
 				setFail(e.message);

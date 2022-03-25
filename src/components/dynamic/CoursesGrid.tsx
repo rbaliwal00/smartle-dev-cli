@@ -26,12 +26,11 @@ const CoursesGrid = ({ courses, color = 'accent-200', elementWidth='sm:w-1/2 md:
     
   async function requestSubjects() {
     const res = await fetch(
-      `http://13.126.1.233:8000/coursesonhome`
+      `https://www.backend.smartle.co/coursesonhome`
     );
-    console.log(res)
+    // console.log(res)
     const json = await res.json();
-    console.log(subjects);
-    setSubjects(json.result);
+    setSubjects(json);
 }
 
     const isMobile = useMediaQuery('(max-width:1000px)');
@@ -65,7 +64,7 @@ const CoursesGrid = ({ courses, color = 'accent-200', elementWidth='sm:w-1/2 md:
                 className="py-10"
               >
                 {
-                  subjects.map((course:any, key:any) => {
+                  subjects ? subjects.map((course:any, key:any) => {
                     return (
                       <SwiperSlide>
                         <div className="flex justify-center">
@@ -73,7 +72,7 @@ const CoursesGrid = ({ courses, color = 'accent-200', elementWidth='sm:w-1/2 md:
                         </div>
                       </SwiperSlide>
                     );
-                  })
+                  }) : null
                 }
               </Swiper>
             )

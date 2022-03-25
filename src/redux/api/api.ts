@@ -1,7 +1,7 @@
 import axios from 'axios';
 
  const API = axios.create({
-     baseURL: 'http://13.126.1.233:8000/'
+     baseURL: 'https://www.backend.smartle.co/'
  });
 // const API = axios.create({
 //     baseURL: 'http://localhost:8000/'

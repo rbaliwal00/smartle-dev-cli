@@ -8,7 +8,7 @@ export const videoBase = "https://www.youtube.com/embed/";
 export async function getCourses(param?: any, value?: any, compare: any = "=", ent:boolean=false) {
 
   const res = await fetch(
-    `http://13.126.1.233:8000/coursesonhome`
+    `https://www.backend.smartle.co/coursesonhome`
   );
  
   const json = await res.json();
